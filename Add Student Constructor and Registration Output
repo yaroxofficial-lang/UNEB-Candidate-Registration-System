@@ -1,0 +1,56 @@
+public Main(String studentName, String schoolName,
+                String candidateNumber) {
+
+        System.out.println("Executing student constructor...");
+
+        this.studentName = studentName;
+        this.schoolName = schoolName;
+        this.candidateNumber = candidateNumber;
+
+        System.out.println("Student details assigned successfully.");
+    }
+
+    // Display student information
+    public void displayStudentDetails() {
+
+        System.out.println("\n===== STUDENT REGISTRATION DETAILS =====");
+
+        System.out.println("Student Name: " + studentName);
+        System.out.println("School Name: " + schoolName);
+        System.out.println("Candidate Number: " + candidateNumber);
+        System.out.println("Registration Status: " + registrationStatus);
+        System.out.println("Examination Centre: " + examinationCentre);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("===== UNEB REGISTRATION SYSTEM =====");
+
+        // Load examination settings before creating students
+        ExaminationConfig.displaySettings();
+
+        // Create first student object
+        System.out.println("\n--- REGISTERING STUDENT 1 ---");
+
+        Main student1 = new Main(
+                "John Peter",
+                "Kampala Secondary School",
+                "U001"
+        );
+
+        student1.displayStudentDetails();
+
+        // Create second student object
+        System.out.println("\n--- REGISTERING STUDENT 2 ---");
+
+        Main student2 = new Main(
+                "Mary Sarah",
+                "Entebbe High School",
+                "U002"
+        );
+
+        student2.displayStudentDetails();
+
+        System.out.println("\n===== REGISTRATION PROCESS COMPLETED =====");
+    }
+}
