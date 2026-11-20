@@ -1,0 +1,8 @@
+ {
+        System.out.println("\nInitializing a new student object...");
+
+        registrationStatus = "Pending";
+        examinationCentre = "Not Yet Assigned";
+
+        System.out.println("Default student values initialized.");
+    }
