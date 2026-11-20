@@ -1,0 +1,30 @@
+package uneb;
+
+public class ExaminationConfig {
+
+    // General examination settings
+    public static final int EXAM_YEAR;
+    public static final double REGISTRATION_FEE;
+    public static final String GRADING_POLICY;
+
+    // Static initialization block
+    static {
+        System.out.println("Loading UNEB examination settings...");
+
+        EXAM_YEAR = 2026;
+        REGISTRATION_FEE = 164000.00;
+        GRADING_POLICY = "UNEB Standard Grading System";
+
+        System.out.println("Examination settings loaded successfully.");
+    }
+
+    // Display examination settings
+    public static void displaySettings() {
+
+        System.out.println("\n===== EXAMINATION SETTINGS =====");
+
+        System.out.println("Exam Year: " + EXAM_YEAR);
+        System.out.println("Registration Fee: UGX " + REGISTRATION_FEE);
+        System.out.println("Grading Policy: " + GRADING_POLICY);
+    }
+}
