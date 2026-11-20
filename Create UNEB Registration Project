@@ -1,0 +1,114 @@
+                                           MAIN
+
+package uneb;
+
+public class Main {
+
+    // Student information
+    private String studentName;
+    private String schoolName;
+    private String candidateNumber;
+
+    // Default values
+    private String registrationStatus;
+    private String examinationCentre;
+
+    // Instance initialization block
+    {
+        System.out.println("\nInitializing a new student object...");
+
+        registrationStatus = "Pending";
+        examinationCentre = "Not Yet Assigned";
+
+        System.out.println("Default student values initialized.");
+    }
+
+    // Constructor
+    public Main(String studentName, String schoolName,
+                String candidateNumber) {
+
+        System.out.println("Executing student constructor...");
+
+        this.studentName = studentName;
+        this.schoolName = schoolName;
+        this.candidateNumber = candidateNumber;
+
+        System.out.println("Student details assigned successfully.");
+    }
+
+    // Display student information
+    public void displayStudentDetails() {
+
+        System.out.println("\n===== STUDENT REGISTRATION DETAILS =====");
+
+        System.out.println("Student Name: " + studentName);
+        System.out.println("School Name: " + schoolName);
+        System.out.println("Candidate Number: " + candidateNumber);
+        System.out.println("Registration Status: " + registrationStatus);
+        System.out.println("Examination Centre: " + examinationCentre);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("===== UNEB REGISTRATION SYSTEM =====");
+
+        // Load examination settings before creating students
+        ExaminationConfig.displaySettings();
+
+        // Create first student object
+        System.out.println("\n--- REGISTERING STUDENT 1 ---");
+
+        Main student1 = new Main(
+                "John Peter",
+                "Kampala Secondary School",
+                "U001"
+        );
+
+        student1.displayStudentDetails();
+
+        // Create second student object
+        System.out.println("\n--- REGISTERING STUDENT 2 ---");
+
+        Main student2 = new Main(
+                "Mary Sarah",
+                "Entebbe High School",
+                "U002"
+        );
+
+        student2.displayStudentDetails();
+
+        System.out.println("\n===== REGISTRATION PROCESS COMPLETED =====");
+    }
+}
+                                          EXAMINATIONCONFIG
+package uneb;
+
+public class ExaminationConfig {
+
+    // General examination settings
+    public static final int EXAM_YEAR;
+    public static final double REGISTRATION_FEE;
+    public static final String GRADING_POLICY;
+
+    // Static initialization block
+    static {
+        System.out.println("Loading UNEB examination settings...");
+
+        EXAM_YEAR = 2026;
+        REGISTRATION_FEE = 164000.00;
+        GRADING_POLICY = "UNEB Standard Grading System";
+
+        System.out.println("Examination settings loaded successfully.");
+    }
+
+    // Display examination settings
+    public static void displaySettings() {
+
+        System.out.println("\n===== EXAMINATION SETTINGS =====");
+
+        System.out.println("Exam Year: " + EXAM_YEAR);
+        System.out.println("Registration Fee: UGX " + REGISTRATION_FEE);
+        System.out.println("Grading Policy: " + GRADING_POLICY);
+    }
+}
+
